@@ -1,4 +1,4 @@
-function [Q,R,errs]=gsces(V, idxfn)
+function [Q,R,errs]=cpqr(V, idxfn)
 R = [];
 A = V;
 [m, n] = size(V);
