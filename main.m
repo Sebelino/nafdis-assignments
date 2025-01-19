@@ -10,17 +10,17 @@ V = [
 [Q,R,errs] = gsces(V);
 
 errs(3)
-plot(1:p, errs)
+plot(1:minsz(V), errs)
 set(gca,'YScale','log')
 
 V = load_mat_hw1(1000,100)
 
 [Q,R,errs] = gsces(V)
 
-plot(1:min(size(V)), errs)
+plot(1:minsz(V), errs)
 set(gca,'YScale','log')
 
 [Q,R,errs] = gsceg(V)
 
-plot(1:min(size(V)), errs)
+plot(1:minsz(V), errs)
 set(gca,'YScale','log')
