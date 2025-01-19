@@ -1,4 +1,4 @@
-function [Q,R,errs, A]=gsces(V)
+function [Q,R,errs]=gsces(V, idxfn)
 R = [];
 A = V;
 [m, n] = size(V);
@@ -8,7 +8,7 @@ j = 1;
 errs = [];
 
 for j = 1:p
-    i = j;
+    i = idxfn(j,A);
     q = A(:,i) / norm(A(:,i));
     r = q' * A;
     r = r';
