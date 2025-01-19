@@ -9,7 +9,8 @@ V = [
 
 [Q,R,errs] = cpqr(V, @standardidx);
 
-errs(3)
+disp(['3rd error: ', num2str(errs(3))])
+
 plot(1:minsz(V), errs)
 set(gca,'YScale','log')
 
