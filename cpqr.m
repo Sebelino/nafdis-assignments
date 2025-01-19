@@ -4,7 +4,6 @@ A = V;
 [m, n] = size(V);
 p = min(m,n);
 Q = [];
-j = 1;
 errs = [];
 
 for j = 1:p
