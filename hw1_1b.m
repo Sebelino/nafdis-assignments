@@ -18,5 +18,4 @@ axis square;
 set(gca,'YLim',[1e-20, 1e5])
 xlabel('j')
 ylabel('$||A_j||$', 'Interpreter', 'latex')
-
-exportgraphics(gcf, 'hw1_1b.png');
+exportgraphics(gcf, [mfilename,'.png']);
