@@ -18,4 +18,4 @@ axis square;
 set(gca,'YLim',[1e-20, 1e5])
 xlabel('j')
 ylabel('$||A_j||$', 'Interpreter', 'latex')
-exportgraphics(gcf, [mfilename,'.png']);
+exportgraphics(gcf, [mfilename,'.png'], 'Resolution', 100);
