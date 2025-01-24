@@ -10,3 +10,6 @@ lowRankApproximationS = S(1:k,1:k);
 X = U(1:m,1:k)*lowRankApproximationS*V(1:n,1:k)';
 
 disp(['Lowest rank: ', num2str(k)])
+
+S(largestErrorIndex,largestErrorIndex)
+norm(X-A,2)
