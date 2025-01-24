@@ -1,6 +1,6 @@
 V = load_mat_hw1(1000,100);
 
-[Q,R,errs] = cpqr(V, @standardidx);
+[Q,R,errs] = gsce(V, @standardidx);
 
 disp(['3rd error: ', num2str(errs(3))])
 

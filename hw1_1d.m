@@ -1,6 +1,6 @@
 V = load_mat_hw1(1000,100);
 
-[Q,R,errs] = cpqr(V, @greedyidx);
+[Q,R,errs] = gsce(V, @greedyidx);
 
 figure;
 plot(1:minsz(V), errs)

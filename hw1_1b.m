@@ -7,7 +7,7 @@ V = [
     4 7 7005 7012;
     ];
 
-[Q,R,errs] = cpqr(V, @standardidx);
+[Q,R,errs] = gsce(V, @standardidx);
 
 disp(['3rd error: ', num2str(errs(3))])
 
