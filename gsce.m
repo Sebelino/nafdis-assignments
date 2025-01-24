@@ -10,10 +10,9 @@ for j = 1:p
     i = idxfn(j,A);
     q = A(:,i) / norm(A(:,i));
     r = q' * A;
-    r = r';
     Q = [Q,q];
-    R = [R ; r'];
-    A = A - q*r';
+    R = [R ; r];
+    A = A - q*r;
     errs = [errs norm(A,2)];
 end
 end
