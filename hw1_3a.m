@@ -2,7 +2,7 @@ A = load_mat_hw1(1000,100);
 [m, n] = size(A);
 epsilon = 1e-10;
 [U,S,V] = svd(A);
-largestErrorIndex = find(diag(S) > 1e-10,1,'last') + 1;
+largestErrorIndex = find(diag(S) > epsilon,1,'last') + 1;
 k = largestErrorIndex - 1;
 
 lowRankApproximationS = S(1:k,1:k);
