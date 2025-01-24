@@ -3,8 +3,7 @@ V = load_mat_hw1(1000,100);
 [Q,R,errs] = gsce(V, @greedyidx);
 
 figure;
-plot(1:minsz(V), errs)
-set(gca,'YScale','log')
+semilogy(1:minsz(V), errs)
 axis square;
 set(gca,'YLim',[1e-20, 1e5])
 xlabel('j')
