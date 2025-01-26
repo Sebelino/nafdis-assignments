@@ -1,5 +1,6 @@
 *.asv
 *.pdf
 *.png
+*.avi
 
 misc/zalando_items.mat
