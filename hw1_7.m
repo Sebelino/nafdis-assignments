@@ -9,7 +9,7 @@ f = figure('Visible','off');
 semilogy(ps, errs)
 axis square;
 xlabel('s')
-ylabel('$||U*D*V''-A||$', 'Interpreter', 'latex')
+ylabel('$||A-UDV^{\top}||$', 'Interpreter', 'latex')
 saveas(f, [mfilename,'.png']);
 f.Visible = 'on';
 
