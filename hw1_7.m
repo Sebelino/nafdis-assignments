@@ -12,6 +12,7 @@ xlabel('s')
 ylabel('$||A-UDV^{\top}||$', 'Interpreter', 'latex')
 saveas(f, [mfilename,'.png']);
 f.Visible = 'on';
+drawnow;
 
 % b)
 [~,elapsed] = randomSvd(A, 1:15);
