@@ -1,4 +1,4 @@
-function A = read_images(folder)
+function A = readImages(folder)
 folder = ['misc/',folder];
 files = dir(fullfile(folder, '*.png'));
 numSnapshots = numel(files);

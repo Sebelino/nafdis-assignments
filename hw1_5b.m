@@ -1,4 +1,4 @@
-A = read_images('testbild_snapshots');
+A = readImages('testbild_snapshots');
 
 % matrixRank == m == 27 because the probability
 % of one vector (image) being a perfect linear

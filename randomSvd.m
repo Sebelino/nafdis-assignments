@@ -1,6 +1,4 @@
-function [errs,elapsed] = randomSvd(ps)
-A = read_images('roundabout_snapshots');
-
+function [errs,elapsed] = randomSvd(A, ps)
 k = 5;
 [m,n] = size(A);
 errs = [];

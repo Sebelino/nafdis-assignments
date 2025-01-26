@@ -1,5 +1,5 @@
-%A = read_images('testbild_snapshots');
-A = read_images('roundabout_snapshots');
+%A = readImages('testbild_snapshots');
+A = readImages('roundabout_snapshots');
 
 p = 20;
 [Q,R,errs] = gsceb(A, @greedyidx, p);

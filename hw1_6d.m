@@ -1,5 +1,5 @@
-%A = read_images('testbild_snapshots');
-A = read_images('roundabout_snapshots');
+%A = readImages('testbild_snapshots');
+A = readImages('roundabout_snapshots');
 
 ranks = [1,5];
 for p = ranks
@@ -10,7 +10,7 @@ for p = ranks
     height = 437;
     width = 824;
 
-    C = [B;B;B];
+    C = [B;B;B]; % Convert greyscale to grey RGB
 
     makevideo(C,height,width,['out',num2str(p),'.avi']);
 end
