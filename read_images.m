@@ -1,5 +1,5 @@
-function A = read_testbild
-folder = 'misc/testbild_snapshots';
+function A = read_images(folder)
+folder = ['misc/',folder];
 files = dir(fullfile(folder, '*.png'));
 numSnapshots = numel(files);
 firstImage = imread(fullfile(folder, files(1).name));
