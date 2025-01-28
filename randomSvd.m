@@ -1,9 +1,9 @@
-function [errs,elapsed] = randomSvd(A, ps)
+function [errs,elapsed] = randomSvd(A, pMax)
 k = 5;
 [~,n] = size(A);
 errs = [];
 tic;
-for p = ps
+for p = 1:pMax
     % Stage A
     Omega = randn(n,k+p);
     Y = A * Omega;

@@ -1,12 +1,12 @@
 A = readImages('roundabout_snapshots');
 
 % a)
-ps = 0:25;
-[errs,elapsed] = randomSvd(A, ps);
+pMax = 25;
+[errs,elapsed] = randomSvd(A, pMax);
 disp(['Elapsed time for s=25: ',num2str(elapsed)]);
 
 f = figure('Visible','off');
-semilogy(ps, errs)
+semilogy(1:pMax, errs)
 axis square;
 xlabel('s')
 ylabel('$||A-UDV^{\top}||$', 'Interpreter', 'latex')
