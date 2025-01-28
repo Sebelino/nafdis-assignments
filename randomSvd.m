@@ -1,7 +1,7 @@
 function [errs,elapsed] = randomSvd(A, pMax)
 k = 5;
 [~,n] = size(A);
-errs = [];
+errs = zeros(pMax);
 tic;
 for p = 1:pMax
     % Stage A
@@ -17,7 +17,7 @@ for p = 1:pMax
     D = D(1:5,1:5);
     V = V(:,1:5);
     error = norm(U*D*V' - A, 2);
-    errs = [errs error];
+    errs(p) = error;
 end
 elapsed = toc;
 end
