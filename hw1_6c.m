@@ -1,5 +1,6 @@
 %A = readImages('testbild_snapshots');
 A = readImages('roundabout_snapshots');
+[~,imageCount] = size(A);
 
 ranks = [5,10,20];
 iter = 0;
@@ -14,7 +15,7 @@ for p = ranks
     height = 437;
     width = 824;
 
-    images = reshape(B,height,width,3,56);
+    images = reshape(B,height,width,3,imageCount);
     img1 = uint8(images(:,:,:,1));
     iter = iter+1;
     subplot(3,1,iter);
