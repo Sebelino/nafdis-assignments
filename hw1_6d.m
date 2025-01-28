@@ -1,7 +1,7 @@
 %A = readImages('testbild_snapshots');
 A = readImages('roundabout_snapshots');
 
-ranks = [1, 3, 5];
+ranks = [1, 3];
 for p = ranks
     [Q,R,errs] = gsceb(A, @greedyidx, p);
 
