@@ -8,4 +8,4 @@ tol = norm(diff, 2);
 
 [X,k] = approxsvd(A,tol);
 
-norm(A-X,2)
+disp(['||A-X|| = ', num2str(norm(A-X, 2))])
