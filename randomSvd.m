@@ -1,8 +1,7 @@
 function [errs,elapsed] = randomSvd(A, ps)
 k = 5;
-[m,n] = size(A);
+[~,n] = size(A);
 errs = [];
-OmegaOrg = randn(n,k+25);
 tic;
 for p = ps
     % Stage A
