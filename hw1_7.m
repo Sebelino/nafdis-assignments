@@ -15,5 +15,5 @@ f.Visible = 'on';
 drawnow;
 
 % b)
-[~,elapsed] = randomSvd(A, 1:15);
+[~,elapsed] = randomSvd(A, 15);
 disp(['Elapsed time for s=15: ',num2str(elapsed)]);
