@@ -1,17 +1,17 @@
 function [Q,R,errs]=gsceb(V, idxfn, p)
-R = [];
-A = V;
 [m, n] = size(V);
-Q = [];
-errs = [];
+A = V;
+R = zeros(p,n);
+Q = zeros(m,p);
+errs = zeros(1,p);
 
 for j = 1:p
     i = idxfn(j,A);
     q = A(:,i) / norm(A(:,i));
     r = q' * A;
-    Q = [Q,q];
-    R = [R ; r];
+    Q(:,j) = q;
+    R(j,:) = r;
     A = A - q*r;
-    errs = [errs norm(A,2)];
+    errs(j) = norm(A,2);
 end
 end
