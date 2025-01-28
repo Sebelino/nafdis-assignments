@@ -1,4 +1,4 @@
-function [Q,R,errs]=gsce(V, idxfn, p)
+function [Q,R,errs]=gsceb(V, idxfn, p)
 R = [];
 A = V;
 [m, n] = size(V);
