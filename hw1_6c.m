@@ -5,7 +5,7 @@ A = readImages('roundabout_snapshots');
 ranks = [5,10,20];
 iter = 0;
 
-figure;
+f = figure('Visible','on');
 
 for p = ranks
     [Q,R,errs] = gsceb(A, @greedyidx, p);
@@ -22,3 +22,4 @@ for p = ranks
     imshow(img1);
     drawnow;
 end
+saveas(f, [mfilename,'.png']);
