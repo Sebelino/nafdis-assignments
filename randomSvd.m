@@ -5,7 +5,6 @@ errs = [];
 tic;
 for p = ps
     % Stage A
-    %Omega = OmegaOrg(:,1:k+p);
     Omega = randn(n,k+p);
     Y = A * Omega;
     [Q,~] = qr(Y,'econ');
