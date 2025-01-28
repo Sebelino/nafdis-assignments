@@ -11,11 +11,9 @@ function [C,Z]=ID_col(A,kk)
 Qs=Q(:,1:kk); 
 Rs=R(1:kk,:);
 
-[m,n] = size(A);
-
 % Now: Compute the ID col
 R11 = Rs(1:kk,1:kk);
-R12 = Rs(1:kk,kk+1:n);
+R12 = Rs(1:kk,kk+1:end);
 
 C=A*P(:,1:kk);
 I=eye(kk,kk);
