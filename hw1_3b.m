@@ -1,7 +1,5 @@
 A = load_mat_hw1(1000,100);
 
-[Q,R] = gsce(A, @greedyidx);
+[X,~] = svdapprox(A,1e-10);
 
-[Uhat,S,V] = svd(R);
-
-rank(S)
+disp(['Rank: ', num2str(rank(X))])
