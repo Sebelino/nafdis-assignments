@@ -5,7 +5,7 @@ v = ones(size(A,2),1);
 diff = A-u*v';
 
 tol = norm(diff, 2);
-[X,k] = approxsvd(A,tol);
+[X,k] = svdapprox(A,tol);
 
 disp(['tol: ',num2str(tol)])
 disp(['Rank: ',num2str(k)])
