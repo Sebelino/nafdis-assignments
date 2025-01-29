@@ -1,3 +1,4 @@
+load('zalando_items.mat');
 A = item5;
 
 [m,n] = size(A);
@@ -30,6 +31,6 @@ semilogy(1:maxk, errsId, 'DisplayName', 'ID');
 axis square;
 xlabel('Rank k')
 ylabel('Relative error', 'Interpreter', 'latex')
+legend show;
 saveas(f, [mfilename,'.png']);
 f.Visible = 'on';
-legend show;
