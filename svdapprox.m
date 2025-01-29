@@ -1,4 +1,4 @@
-function [X,k]=gsces(B, tol)
+function [X,k]=svdapprox(B, tol)
 R = [];
 A = B;
 [m, n] = size(B);
