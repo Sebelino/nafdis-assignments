@@ -1,7 +1,6 @@
-function [errs,elapsed] = randomSvd(A, k, sList)
+function errs = randomSvd(A, k, sList)
 [~,n] = size(A);
 errs = zeros(numel(sList),1);
-tic;
 for p = sList
     % Stage A
     Omega = randn(n,k+p);
@@ -18,5 +17,4 @@ for p = sList
     error = norm(U*D*V' - A, 2);
     errs(p+1) = error;
 end
-elapsed = toc;
 end

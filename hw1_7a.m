@@ -2,7 +2,7 @@ A = readImages('roundabout_snapshots');
 
 k = 5;
 sMax = 25;
-[errs,~] = randomSvd(A, k, 0:sMax);
+errs = randomSvd(A, k, 0:sMax);
 
 f = figure('Visible','off');
 semilogy(0:sMax, errs)
