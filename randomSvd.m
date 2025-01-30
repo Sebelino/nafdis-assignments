@@ -1,9 +1,8 @@
-function [errs,elapsed] = randomSvd(A, pMax)
-k = 5;
+function [errs,elapsed] = randomSvd(A, k, pMax)
 [~,n] = size(A);
-errs = zeros(pMax);
+errs = zeros(pMax+1,1);
 tic;
-for p = 1:pMax
+for p = 0:pMax
     % Stage A
     Omega = randn(n,k+p);
     Y = A * Omega;
@@ -13,11 +12,11 @@ for p = 1:pMax
     B = Q'*A;
     [Uhat,D,V] = svd(B,'econ');
     U = Q * Uhat;
-    U = U(:,1:5);
-    D = D(1:5,1:5);
-    V = V(:,1:5);
+    U = U(:,1:k);
+    D = D(1:k,1:k);
+    V = V(:,1:k);
     error = norm(U*D*V' - A, 2);
-    errs(p) = error;
+    errs(p+1) = error;
 end
 elapsed = toc;
 end
