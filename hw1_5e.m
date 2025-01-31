@@ -30,12 +30,13 @@ for p=1:P
     end
 end
 
+t1=mean(T1,2); % Plot the mean of the runs
+t2=mean(T2,2);
+
 disp(['Tolerance levels: ', num2str(tols)])
 disp(['Naive SVD:        ', num2str(t1')])
 disp(['Partial SVD:      ', num2str(t2')])
 
-t1=mean(T1,2); % Plot the mean of the runs
-t2=mean(T2,2);
 clf;
 f = figure('Visible','off');
 plot(tols,t1,tols,t2);
