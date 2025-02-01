@@ -1,4 +1,5 @@
-A = myDataMatrix(3);
+A = makeDataMatrix(3);
+ee = 2.5;
 
 Dist=zeros(size(A,1));
 for i=1:size(A,1)
@@ -6,8 +7,6 @@ for i=1:size(A,1)
        Dist(i,j)=norm(A(i,:)-A(j,:),2);
    end
 end
-
-ee = 2.5;
 
 W=ones(size(Dist));
 W(Dist>ee)=0; % Set too far away to
