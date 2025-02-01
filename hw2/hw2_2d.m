@@ -11,6 +11,8 @@ L = D-W;
 [V, D] = eig(L);
 v2 = V(:,2);
 
+kmeans(V(:,1:2),2)'
+
 f = figure('Visible','off','Units', 'pixels', 'Position', [0,0,400,800]);
 t = tiledlayout(2,1);
 t.Padding = 'compact';
