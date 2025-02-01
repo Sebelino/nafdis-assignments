@@ -1,12 +1,6 @@
 A = makeDataMatrix(2);
 ee = 2.5;
-
-Dist=zeros(size(A,1));
-for i=1:size(A,1)
-   for j=1:size(A,1)
-       Dist(i,j)=norm(A(i,:)-A(j,:),2);
-   end
-end
+Dist = makeDistances(A);
 
 W=ones(size(Dist));
 W(Dist>ee)=0; % Set too far away to
