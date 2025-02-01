@@ -12,10 +12,10 @@ Qs=Q(:,1:kk);
 Rs=R(1:kk,:);
 
 % Now: Compute the ID col
-R11 = Rs(1:kk,1:kk);
-R12 = Rs(1:kk,kk+1:end);
+R11 = Rs(1:kk,1:kk); % <-
+R12 = Rs(1:kk,kk+1:end); % <-
 
-C=A*P(:,1:kk);
+C=A*P(:,1:kk); % <-
 I=eye(kk,kk);
 Z= [I, inv(R11)*R12]*P';
 
