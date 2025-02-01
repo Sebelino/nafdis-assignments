@@ -27,14 +27,8 @@ end
 
 n=size(W,1);
 z=exp(((1:n)-1)*2i*pi/n);
-clf;
-plot(z,'o','MarkerFaceColor','k'); % Plot all nodes
-hold on;
 
-for i=1:size(W,1)
-   for j=1:size(W,1)
-       if (W(i,j)>0)
-            plot([z(i),z(j)],'k');   % Plot edges
-       end
-   end
-end
+f = figure('Visible','off','Units', 'pixels', 'Position', [0,0,400,400]);
+plotGraph(z,W);
+saveas(f, [mfilename,'.png']);
+f.Visible = 'on';
