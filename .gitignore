@@ -3,5 +3,6 @@
 *.png
 *.avi
 *.zip
+.DS_Store
 
 zalando_items.mat
