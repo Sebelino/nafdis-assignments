@@ -1,4 +1,3 @@
-%A = readImages('testbild_snapshots');
 A = readImages('roundabout_snapshots');
 
 ranks = [1, 3];

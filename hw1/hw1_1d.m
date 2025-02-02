@@ -1,5 +1,6 @@
 V = load_mat_hw1(1000,100);
 
+% Same algorithm as 1c but with greedy
 [Q,R,errs] = gsce(V, @greedyidx);
 
 f = figure('Visible','off');

@@ -17,11 +17,11 @@ for p=1:P
     randomSvd(A, k, s);
     T2(p,1)=toc;
 
-    fprintf('Iteration %d/%d: %g, %g\n',p,P,T1(p,1),T2(p,1))
+    fprintf('Iteration %d/%d: Greedy:%g, RandomSVD:%g\n',p,P,T1(p,1),T2(p,1))
 end
 
 t1=mean(T1); % Plot the mean of the runs
 t2=mean(T2);
 
-disp(['Greedy Algorithm 1: ', num2str(t1)])
-disp(['Randomized SVD:     ', num2str(t2)])
+disp(['Greedy Algorithm: ', num2str(t1)])
+disp(['Randomized SVD:    ', num2str(t2)])

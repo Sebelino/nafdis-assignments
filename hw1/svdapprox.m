@@ -2,8 +2,9 @@ function [X,k]=svdapprox(B, tol)
 A = B;
 [m, n] = size(B);
 p = min(m,n);
-R = zeros(p,n); % Preallocate
-Q = zeros(m,p); % Preallocate
+% Preallocate memory for efficiency
+R = zeros(p,n); 
+Q = zeros(m,p); 
 
 for j = 1:p
     [~, i] = max(vecnorm(A, 2, 1));
@@ -14,6 +15,7 @@ for j = 1:p
     A = A - q*r;
     t = norm(A,'fro');
 
+    % Stop if the norm falls below the tolerance
     if t < tol
         k = j;
         break;

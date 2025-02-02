@@ -1,4 +1,4 @@
-function [Q,R,errs]=gsce(V, idxfn)
+function [Q,R,errs]=gsce(V, idxfn) % Graham-Schimdt Column Elimination
 R = [];
 A = V;
 [m, n] = size(V);
@@ -7,7 +7,7 @@ Q = [];
 errs = [];
 
 for j = 1:p
-    i = idxfn(j,A);
+    i = idxfn(j,A); % id function - greedy or standard
     q = A(:,i) / norm(A(:,i));
     r = q' * A;
     Q = [Q,q];

@@ -20,8 +20,8 @@ end
 svdRank = find(errsSvd <= 0.25, 1);
 idRank = find(errsId <= 0.25, 1);
 
-svdRank
-idRank
+disp(['Randomized SVD rank: ', num2str(svdRank)])
+disp(['ID rank:             ', num2str(idRank)])
 
 f = figure('Visible','off');
 semilogy(1:maxk, errsSvd, 'DisplayName', 'SVD');
