@@ -7,4 +7,3 @@ W = makeKnnWeights(Dist, k);
 
 G = graph(W);
 plot(G, 'Layout', 'force');
-title('kNN Graph with k = 3');
