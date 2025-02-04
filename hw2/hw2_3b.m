@@ -1,6 +1,6 @@
 load('bengali_cleanup.mat');
 
-A=imread('misc/bengali_map.png');
+A=imread('bengali_map.png');
 figure(1); clf;
 imshow(A); hold on;
 jv=[102,280,10];
