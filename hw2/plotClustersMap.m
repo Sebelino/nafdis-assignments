@@ -17,7 +17,7 @@ for i = 1:clusterCount
     nexttile;
     imshow(bengali); hold on;
     indices = find(clusters == i);
-    plot(y_coords(indices),x_coords(indices),'r*','MarkerSize', 4);
+    plot(y_coords(indices),x_coords(indices),'r.');
 end
 f.Visible = 'on';
 end
