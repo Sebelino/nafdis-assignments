@@ -19,6 +19,6 @@ for i = 1:clusterCount
     indices = find(clusters == i);
     plot(y_coords(indices),x_coords(indices),'r.','MarkerSize',4);
 end
-saveas(f, outImagePath);
+exportgraphics(t,outImagePath);
 f.Visible = 'on';
 end

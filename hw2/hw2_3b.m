@@ -1,10 +1,13 @@
 load('bengali_cleanup.mat');
 
-A=imread('bengali_map.png');
-figure(1); clf;
-imshow(A); hold on;
 jv=[102,280,10];
-plot(y_coords(jv),x_coords(jv),'r*')
+
+A = imread('bengali_map.png');
+f = figure('Visible','off','Units', 'pixels', 'Position', [0, 0, 400, 400]);
+imshow(A); hold on;
+plot(y_coords(jv),x_coords(jv),'r.','MarkerSize',15);
+exportgraphics(f,[mfilename,'.png'],'Resolution',400)
+f.Visible = 'on';
 
 Dist = makeDistances(timeseries);
 
