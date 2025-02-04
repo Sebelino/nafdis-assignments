@@ -1,4 +1,8 @@
-function [X,k]=svdapprox(B, tol)
+function [X,k]=svdapprox(B, tol, normType)
+if nargin < 3
+    normType = 2; % Spectral norm is default
+end
+
 A = B;
 [m, n] = size(B);
 p = min(m,n);
@@ -13,7 +17,7 @@ for j = 1:p
     Q(:,j) = q;
     R(j,:) = r;
     A = A - q*r;
-    t = norm(A,'fro');
+    t = norm(A,normType);
 
     % Stop if the norm falls below the tolerance
     if t < tol
