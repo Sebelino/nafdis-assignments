@@ -9,3 +9,4 @@ tol = norm(diff, 2);
 
 disp(['tol: ',num2str(tol)])
 disp(['Rank: ',num2str(k)])
+disp(['||A-X|| = ',num2str(norm(A-X,2))])
