@@ -35,7 +35,7 @@ t2=mean(T2,2);
 
 disp(['Tolerance levels: ', num2str(tols)])
 disp(['Naive SVD:        ', num2str(t1')])
-disp(['Partial SVD:      ', num2str(t2')])
+disp(['Approximate SVD:  ', num2str(t2')])
 
 clf;
 f = figure('Visible','off');
