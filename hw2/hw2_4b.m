@@ -1,7 +1,7 @@
 load('zalando_clustering.mat');
 
 n = 1000;
-w = ones(n);
+w = ones(size(items,1),1);
 D = buildDistance(items, w);
 
 Db = D + (max(D(:))+1)*eye(n); % Ignore diagonal values when minimizing
