@@ -1,6 +1,6 @@
 function v2 = spectralClustering(items)
 n = size(items,2);
-w = ones(n);
+w = ones(size(items,1),1);
 D = buildDistance(items, w);
 
 W = zeros(n);
