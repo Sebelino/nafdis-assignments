@@ -28,5 +28,6 @@ predicted = (v2<tau)+1;
 [truePositives,~] = size(find(predicted-correct==0));
 accuracy = truePositives/n;
 
+fprintf('Tau: %f \n',tau)
 fprintf('True positives: %d \n',truePositives)
 fprintf('Accuracy: %.1f %% \n',accuracy*100)
