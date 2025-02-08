@@ -1,6 +1,6 @@
 load('zalando_clustering.mat', 'items', 'correct');
 
-v2 = spectralClustering(items);
+[v2,~] = spectralClustering(items);
 tau = median(v2);
 predicted = (v2<tau)+1;
 n = size(items,2);
