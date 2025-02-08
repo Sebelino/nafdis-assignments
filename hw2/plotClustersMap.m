@@ -4,8 +4,9 @@ W = makeKnnWeights(Dist, k);
 D = makeDegreeMatrix(W);
 L = D - W;
 clusterCount = 7;
-%[U, ~] = eigs(L, clusterCount, 'smallestabs');
-[U, ~] = eigs(L, clusterCount, 0.0001);
+% [U, ~] = eigs(L, 7, 'smallestabs');
+[U, ~] = eig(L);
+U = U(:,1:clusterCount);
 clusters = kmeans(U, clusterCount);
 
 f = figure('Visible','off','Units', 'pixels', 'Position', [0, 0, 500, 800]);
