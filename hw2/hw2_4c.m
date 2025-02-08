@@ -1,6 +1,7 @@
 load('zalando_clustering.mat', 'items', 'correct');
 
-[v2,~] = spectralClustering(items);
+w = ones(size(items,1),1);
+[v2,~] = spectralClustering(items,w);
 smallClusterIndices = find(v2<0);
 
 f = figure('Visible','off','Units', 'pixels', 'Position', [0, 0, 800, 800]);
