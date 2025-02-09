@@ -1,8 +1,11 @@
 load('zalando_clustering.mat', 'items', 'correct');
 
 w = ones(size(items,1),1);
-[v2,~] = spectralClustering(items,w);
+[v2,~,Es] = spectralClustering(items,w);
 smallClusterIndices = find(v2<0);
+
+disp('First few eigenvalues:')
+disp(Es(1:5))
 
 f = figure('Visible','off','Units', 'pixels', 'Position', [0, 0, 800, 800]);
 t = tiledlayout(2,2);

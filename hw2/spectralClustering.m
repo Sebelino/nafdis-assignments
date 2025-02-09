@@ -1,4 +1,4 @@
-function [v2,D] = spectralClustering(items, w)
+function [v2,D,Es] = spectralClustering(items, w)
 n = size(items,2);
 D = buildDistance(items, w);
 
@@ -16,6 +16,7 @@ W = (W+W')/2; % We want an undirected graph
 De = makeDegreeMatrix(W);
 L = De - W;
 
-[V,~] = eig(L);
+[V,Es] = eig(L);
 v2 = V(:,2);
+Es = diag(Es);
 end
