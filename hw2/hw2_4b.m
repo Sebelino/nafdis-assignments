@@ -15,19 +15,19 @@ t.TileSpacing = 'compact';
 
 nexttile;
 zalando_plot(items(:,1)); hold on;
-title('image(:,1)');
+title('items(:,1)');
 
 nexttile;
 zalando_plot(items(:,idx1)); hold on;
-title(['image(:,',num2str(idx1),')']);
+title(['items(:,',num2str(idx1),')']);
 
 nexttile;
 zalando_plot(items(:,2)); hold on;
-title('image(:,2)');
+title('items(:,2)');
 
 nexttile;
 zalando_plot(items(:,idx2)); hold on;
-title(['image(:,',num2str(idx2),')']);
+title(['items(:,',num2str(idx2),')']);
 
 outImagePath = [mfilename,'.png'];
 exportgraphics(t,outImagePath);
