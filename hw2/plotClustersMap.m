@@ -7,7 +7,7 @@ clusterCount = 7;
 % [U, ~] = eigs(L, 7, 'smallestabs');
 [U, ~] = eig(L);
 U = U(:,1:clusterCount);
-rng(42) % Reproducibility
+randn('seed',0); % Reproducibility
 clusters = kmeans(U, clusterCount);
 
 f = figure('Visible','off','Units', 'pixels', 'Position', [0, 0, 500, 800]);
