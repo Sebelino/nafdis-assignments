@@ -1,0 +1,25 @@
+% Compute a semiseparable matrix of size n times n
+n=6000;
+randn('seed',0);
+v=randn(n,1);
+D=diag(randn(n,1));
+A=v*v'+D;
+x=randn(n,1);
+
+idx = randi(size(A,1));
+
+upperLeftBlock = A(1:3000, 1:3000);
+upperRightBlock = A(1:3000, 3001:6000);
+lowerLeftBlock = A(3001:6000,1:3000);
+lowerRightBlock = A(3001:6000,3001:6000);
+
+rank(lowerLeftBlock) % 1
+rank(upperRightBlock) % 1
+rank(lowerRightBlock) % 3000
+rank(upperLeftBlock) % 3000
+
+L = tril(A,-1);
+U = triu(A,1);
+
+rank(L)
+rank(U)
