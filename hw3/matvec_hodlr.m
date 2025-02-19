@@ -19,8 +19,8 @@ for tau=1:length(node_keys)
         Isigma1=index_dict(child1);
         Isigma2=index_dict(child2);
 
-        block1_add=A(Isigma1,Isigma2)*x(Isigma2); % What goes here?
-        block2_add=A(Isigma2,Isigma1)*x(Isigma1); % What goes here?
+        block1_add=v(Isigma1)*(v(Isigma2)'*x(Isigma2));
+        block2_add=v(Isigma2)*(v(Isigma1)'*x(Isigma1)); % What goes here?
         b(Itau)=b(Itau)+[block1_add;block2_add];
     end
 end
