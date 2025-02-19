@@ -15,11 +15,7 @@ lowerRightBlock = A(3001:6000,3001:6000);
 
 rank(lowerLeftBlock) % 1
 rank(upperRightBlock) % 1
-rank(lowerRightBlock) % 3000
-rank(upperLeftBlock) % 3000
+%rank(lowerRightBlock) % 3000
+%rank(upperLeftBlock) % 3000
 
-L = tril(A,-1);
-U = triu(A,1);
-
-rank(L)
-rank(U)
+%idx = randi(6000); rank(A(idx+1:6000,1:idx))
