@@ -17,5 +17,7 @@ end
 
 incorrectlyClassifiedIndices = find(guess ~= correct);
 firstIncorrectlyClassifiedIndex = incorrectlyClassifiedIndices(1);
+misclassifiedImagesCount = numel(incorrectlyClassifiedIndices);
 
+disp(['Number of misclassified images: ', num2str(misclassifiedImagesCount)])
 zalando_plot(items(:,firstIncorrectlyClassifiedIndex))

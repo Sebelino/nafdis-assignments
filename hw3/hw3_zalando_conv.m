@@ -30,13 +30,8 @@ end
 
 incorrectlyClassifiedIndices = find(guess ~= correct);
 firstIncorrectlyClassifiedIndex = incorrectlyClassifiedIndices(1);
+misclassifiedImagesCount = numel(incorrectlyClassifiedIndices);
+
+disp(['Number of misclassified images: ', num2str(misclassifiedImagesCount)])
 
 zalando_plot(items(:,firstIncorrectlyClassifiedIndex))
-
-%% Circulant matrix multiplication
-
-function x=matvec_circulant(z,b)
-    % Naive method
-    C=toeplitz(z,[z(1);z(end:-1:2)]); % Create the circulant matrix
-    x=C*b;
-end
