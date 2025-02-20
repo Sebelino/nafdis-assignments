@@ -10,12 +10,8 @@ idx = randi(size(A,1));
 
 upperLeftBlock = A(1:3000, 1:3000);
 upperRightBlock = A(1:3000, 3001:6000);
-lowerLeftBlock = A(3001:6000,1:3000);
-lowerRightBlock = A(3001:6000,3001:6000);
 
 rank(lowerLeftBlock) % 1
 rank(upperRightBlock) % 1
-%rank(lowerRightBlock) % 3000
-%rank(upperLeftBlock) % 3000
 
 %idx = randi(6000); rank(A(idx+1:6000,1:idx))
