@@ -1,4 +1,5 @@
 load 'hw3_zalando.mat';
+p=size(items,2); % Nof items
 % Filter to use
 zz=[-14:-1, 1:14];
 alpha=5;
