@@ -20,4 +20,9 @@ firstIncorrectlyClassifiedIndex = incorrectlyClassifiedIndices(1);
 misclassifiedImagesCount = numel(incorrectlyClassifiedIndices);
 
 disp(['Number of misclassified images: ', num2str(misclassifiedImagesCount)])
+disp(['First misclassified image: ', num2str(firstIncorrectlyClassifiedIndex)])
+
+f = figure('Visible','off','Units', 'pixels', 'Position', [0, 0, 400, 400]);
 zalando_plot(items(:,firstIncorrectlyClassifiedIndex))
+exportgraphics(f,'hw3_4b.png');
+f.Visible = 'on';
