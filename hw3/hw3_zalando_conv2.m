@@ -7,6 +7,9 @@ filter=exp(-zz.^2/alpha).*zz;
 n=28;  % size of each image
 items_conv=zeros(size(items)); % Filtered images
 
+P = eye(n^2);
+P = [P(:,14+1:end),P(:,1:14)]; % Permutation matrix
+
 tic;
 for i=1:size(items,2) % Apply a one-dimensional filter
     X=reshape(items(:,i),n,n);
@@ -15,6 +18,7 @@ for i=1:size(items,2) % Apply a one-dimensional filter
         z=real(matvec_circulant2(filter(:),X(:,j)));
         Z(:,j)=z;
     end
+    %Z = P'*Z(:); % Shift the image so it doesn't look like crap
     items_conv(:,i)=Z(:);
 end
 toc;
