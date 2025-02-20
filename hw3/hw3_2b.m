@@ -10,7 +10,7 @@ Fn = dftMatrix(n);
 yf = Fn * y;
 
 freqs = (0:n-1) * (Fs / n);
-noise_indices = 1:100:N;
+noise_indices = 1:100:n;
 
 yfa = abs(yf);
 
