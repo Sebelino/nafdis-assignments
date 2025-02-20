@@ -12,7 +12,7 @@ for i=1:size(items,2) % Apply a one-dimensional filter
     X=reshape(items(:,i),n,n);
     Z=zeros(n,n);
     for j=1:n
-        z=real(matvec_circulant(filter(:),X(:,j)));
+        z=real(matvec_circulant2(filter(:),X(:,j)));
         Z(:,j)=z;
     end
     items_conv(:,i)=Z(:);

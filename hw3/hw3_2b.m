@@ -2,7 +2,7 @@ fname = 'hw3_terrible_sound_with_hidden_message.ogg';
 
 [y, Fs] = audioread(fname);
 
-n = 2^12; % cannot exceed 2^17
+n = 2^16; % cannot exceed 2^17
 tic;
 y = y(1:n);
 
