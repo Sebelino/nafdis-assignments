@@ -42,6 +42,13 @@ disp(['Number of misclassified images: ', num2str(misclassifiedImagesCount)])
 disp(['First misclassified image: ', num2str(firstIncorrectlyClassifiedIndex)])
 
 f = figure('Visible','off','Units', 'pixels', 'Position', [0, 0, 400, 400]);
+t = tiledlayout(1,2);
+t.Padding = 'compact';
+t.TileSpacing = 'compact';
+
+nexttile;
+zalando_plot(items(:,firstIncorrectlyClassifiedIndex))
+nexttile;
 zalando_plot(items_conv(:,firstIncorrectlyClassifiedIndex))
 exportgraphics(f,'hw3_4c.png');
 f.Visible = 'on';

@@ -2,29 +2,29 @@ fname = 'hw3_terrible_sound_with_hidden_message.ogg';
 
 [y, Fs] = audioread(fname);
 
-n = 2^16; % cannot exceed 2^17
-tic;
+n = 2^15; % cannot exceed 2^16
 y = y(1:n);
 
-Fn = dftMatrix(n);
-
 tic;
+Fn = dftMatrix(n);
 yf = Fn * y;
-toc;
-
 freqs = (0:n-1) * (Fs / n);
 noise_indices = 1:100:n;
-
 yfa = abs(yf);
-
-%plot(freqs, yfa);
-
 annoyingIndices = find(yfa > 100);
-
 yf(annoyingIndices) = 0;
-
 y2 = 1/n * inv(Fn) * yf;
+t1 = toc;
 
-%audiowrite('cleaned_audio.wav', y2, Fs);
+tic;
+yft = fft(y);
+yfta = abs(yft);
+annoyingIndicesfft = find(yfta > 100);
+yf2 = yft;
+yf2(annoyingIndices) = 0;
+yfa2 = abs(yf2);
+yft2 = ifft(yf2,'symmetric');
+t2 = toc;
 
-toc;
+disp(['Elapsed time for Naive DFT : ', num2str(t1/60), ' minutes']);
+disp(['Elapsed time for FFT : ', num2str(t2/60), ' minutes']);
