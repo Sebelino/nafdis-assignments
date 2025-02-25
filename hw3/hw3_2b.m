@@ -2,7 +2,8 @@ fname = 'hw3_terrible_sound_with_hidden_message.ogg';
 
 [y, Fs] = audioread(fname);
 
-n = 2^15; % cannot exceed 2^16
+p = 15;
+n = 2^p; % cannot exceed 2^16
 y = y(1:n);
 
 tic;
@@ -26,5 +27,6 @@ yfa2 = abs(yf2);
 yft2 = ifft(yf2,'symmetric');
 t2 = toc;
 
+disp(['Size: n = 2^', num2str(p)]);
 disp(['Elapsed time for Naive DFT : ', num2str(t1/60), ' minutes']);
 disp(['Elapsed time for FFT : ', num2str(t2/60), ' minutes']);
