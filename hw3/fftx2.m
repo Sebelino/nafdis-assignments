@@ -6,7 +6,7 @@ if rem(n,2) == 0
     k = (0:n/2-1)';
     w = omega.^k;
     % Presume x(1:2:n-1) == x(2:2:n)
-    fftxResult = fftx2(x(1:2:n-1));
+    fftxResult = fftx(x(1:2:n-1));
     u = fftxResult;
     v = w.*fftxResult;
     y = [u+v;u-v];
