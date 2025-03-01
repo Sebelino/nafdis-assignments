@@ -5,13 +5,13 @@ n = length(y);
 yf = fft(y);
 yfa = abs(yf);
 
-%annoyingIndices = find(yfa > 100);
-annoyingIndices = [
-    (17658:100:37658)' ;
-    67658 ;
-    127660 ;
-    (157660:100:177660)' ;
-];
+annoyingIndices = find(yfa > 100);
+%annoyingIndices = [
+%    (17658:100:37658)' ;
+%    67658 ;
+ %   127660 ;
+ %   (157660:100:177660)' ;
+%];
 
 yf2 = yf;
 yf2(annoyingIndices) = 0;
